@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace C_sharp_HW_Classes
 {
@@ -66,7 +62,8 @@ namespace C_sharp_HW_Classes
             }
             public void Print()
             {
-                Console.WriteLine($"Зажигалка бренда:{Brand} , обьемом {GasTankVolume}cc , с газом {GasType} в количестве {Gas}cc");
+                Console.WriteLine($"Зажигалка бренда:{Brand} , обьемом {GasTankVolume}cc , " +
+                    $"с газом {GasType} в количестве {Gas}cc");
 
             }
             // Конструкторы
@@ -103,12 +100,14 @@ namespace C_sharp_HW_Classes
             Lighter bik = new Lighter("Bik", 10, 40, "Butane");
             Lighter zippo = new Lighter("zippo");
             Lighter Cricet = new Lighter();
-            Lighter[] arrOfLighters = new Lighter[5];
-            arrOfLighters[0] = bik;
-            arrOfLighters[1] = zippo;
-            arrOfLighters[2] = Cricet;
-            arrOfLighters[3] = new Lighter("Spichki");
-            arrOfLighters[4] = new Lighter();
+            Lighter[] arrOfLighters = new Lighter[]
+            {
+                bik,
+                zippo, 
+                Cricet, 
+                new Lighter("Spichki"), 
+                new Lighter()
+            };
             foreach (Lighter light in arrOfLighters)
             {
                 light.Print();
@@ -117,6 +116,6 @@ namespace C_sharp_HW_Classes
             }
 
         }
-        
+
     }
 }
